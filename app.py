@@ -2,6 +2,7 @@ import mysql.connector
 from flask import Flask, jsonify, make_response, request
 
 app = Flask(__name__)
+import os
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -9,7 +10,6 @@ mydb = mysql.connector.connect(
     password="",
     database="Byme"   
 )
-
 
 @app.route('/livros', methods=['GET'])
 def get_livros():
